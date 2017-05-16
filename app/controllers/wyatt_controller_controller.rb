@@ -1,0 +1,2 @@
+class WyattControllerController < ApplicationController
+end
