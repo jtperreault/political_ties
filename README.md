@@ -1,6 +1,6 @@
 # Political Ties
 
-This is a project were are using [Rails](rubyonrails.org) to service the public on what's up with the political things are going on in the Traverse City region. For example, who is going to run in the next presidential election? What proposals do you have to vote on in the next election? Who's running for the TCAPS board? This service has you covered. 
+This is a project were are using [Rails](http://rubyonrails.org) to service the public on what's up with the political things are going on in the Traverse City region. For example, who is going to run in the next presidential election? What proposals do you have to vote on in the next election? Who's running for the TCAPS board? This service has you covered. 
 
 ## Requirements
 
@@ -14,7 +14,7 @@ Some things you want to have:
 * Rails: `gem install rails`
 * PostgreSQL: `sudo apt-get install postgresql` OR `sudo dnf install postgresql`
 
-Windows development machines just need to install the [RailsInstaller](railsinstlaler.org) application and [PostgreSQL](www.postgresql.org).
+Windows development machines just need to install the [RailsInstaller](http://railsinstlaler.org) application and [PostgreSQL](http://www.postgresql.org).
 
 todo: macOS installation
 
