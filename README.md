@@ -10,13 +10,13 @@ Some things you want to have:
 `2.2.2 or higher`
 
 ### System dependencies: 
-* Bundle: `gem install bundle`
+* Bundle: `gem install bundler`
 * Rails: `gem install rails`
 * PostgreSQL: `sudo apt-get install postgresql` OR `sudo dnf install postgresql`
 
 Windows development machines just need to install the [RailsInstaller](http://railsinstlaler.org) application and [PostgreSQL](http://www.postgresql.org).
 
-todo: macOS installation
+For macOS machines, install Ruby and PostgreSQL, then run `bundle`.
 
 ## Configuration
 
@@ -26,16 +26,3 @@ Once you have those items installed and working on your machine you will want to
 
 `bin/rails db:create`
 If that fails, install PostgreSQL.
-
-todo: I totally forgot 
-
-## Running the Test Suite
-`bin/rails test`
-
-## Services (job queues, cache servers, search engines, etc.)
-
-todo
-
-## Deployment instructions
-
-todo
