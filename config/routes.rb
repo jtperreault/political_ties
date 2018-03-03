@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
 	get '/wyatt', to: 'wyatt_controller#index'
 	get '/wyatt/about', to: 'wyatt_controller#index'
 
