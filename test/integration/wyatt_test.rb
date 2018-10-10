@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class WyattTest < ActionDispatch::IntegrationTest
-  test "shows specific message when visiting '/wyatt'" do
+  test "shows specific message when visiting" do
     get "/wyatt"
     assert_response :success
 
