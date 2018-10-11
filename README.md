@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/jtperreault/political_ties.svg?branch=master)](https://travis-ci.com/jtperreault/political_ties)
+
 # Political Ties
 
 This is a project we are using [Rails](http://rubyonrails.org) to service the public on what's up with the political things are going on in the Traverse City region. For example, who is going to run in the next presidential election? What proposals do you have to vote on in the next election? Who's running for the TCAPS board? This service has you covered. 
