@@ -1,0 +1,25 @@
+version: '3.6'
+
+services:
+  web:
+    volumes:
+      - .:/usr/src/app
+    build:
+      context: .
+      dockerfile: ./config/docker/web/Dockerfile
+    ports:
+      - "3000:3000"
+    entrypoint:
+      - ./config/docker/web/entrypoint.sh
+    env_file:
+      - ./config/docker/web/.dev.env
+    command: ["rails", "s", "-b", "0.0.0.0"]
+
+  database:
+    image: postgres:12.2
+    env_file: ./config/docker/database/.dev.env
+#    volumes:
+#      - db-data:/var/lib/postgresql/data
+
+# volumes:
+#  db-data:
