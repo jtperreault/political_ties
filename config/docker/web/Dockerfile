@@ -1,4 +1,4 @@
-FROM ruby:2.6
+FROM ruby:2.7.1
 MAINTAINER James T. Perreault <james@perreau.lt>
 
 RUN apt-get update && apt-get install -yqq --no-install-recommends \
@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -yqq --no-install-recommends \
 
 COPY Gemfile* /usr/src/app/
 WORKDIR /usr/src/app
-RUN bundle install --without production
+RUN bundle config set without 'production'
+RUN bundle install
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
