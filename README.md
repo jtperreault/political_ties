@@ -1,49 +1,27 @@
-[![Build Status](https://travis-ci.com/jtperreault/political_ties.svg?branch=master)](https://travis-ci.com/jtperreault/political_ties)
+[![Build Status](https://travis-ci.com/jtperreault/political_ties.svg?branch=primary)](https://travis-ci.com/jtperreault/political_ties)
 
 # Political Ties
 
-This is a project we are using [Rails](http://rubyonrails.org) to service the public on what's up with the political things are going on in the Traverse City region. For example, who is going to run in the next presidential election? What proposals do you have to vote on in the next election? Who's running for the TCAPS board? This service has you covered. 
+A web app that keeps track of politcal ties.
 
 ## Requirements
-Some things you want to have:
+For development you'll need to install a working version of [Docker](https://www.docker.com/products/docker-desktop)
+and [Docker Compose](https://docs.docker.com/compose/). Note: they're usually installed together, as one package.
 
-### Ruby version: 
-You can check your Ruby version by typing:<br>
+### Setup
+With docker installed bring the development services up using the `docker-compose up` command.
 
-`ruby --version`<br>
+#### What gets setup?
+Docker will build two containers (as of this writing), one for the Ruby
+application running on a `web` server and once for the PostgreSQL `database` it relies on.
 
-You'll need Ruby 2.2.2 or higher. If you're using Ubuntu Linux 16.04+, your package manager will install 2.3.1. If you are using Windows or a third party tool, you will get the latest Ruby.
+#### `web` container info
 
-#### Linux
-For Ubuntu Linux, use your package manager to install Ruby (`sudo apt-get install ruby`) or use the third party tools [RVM](http://rvm.io/) or [rbenv](https://github.com/rbenv/rbenv).<br>
-#### macOS
-For macOS, use a third party tool, such as [RVM](http://rvm.io/) or [rbenv](https://github.com/rbenv/rbenv).<br>
-#### Windows
-For Windows, goto to [RubyInstaller](https://rubyinstaller.org/) to get Ruby.<br>
-#### Compiling
-Or you can go ahead and install Ruby from source in which case follow Ruby's documentation. Please use at your own discretion as we have tested Ruby from Ubuntu's and the third party repositories, NOT source packages, although it may work.
-
-### System dependencies: 
-Once you have Ruby installed, use the `gem` command to install these tools as well:
-* Bundle: `gem install bundler`
-* Rails: `gem install rails`
-
-Lucky for us, you can't install the database, PostgreSQL, through `gem`.
-#### PostgreSQL
-##### Linux
-For Ubuntu Linux, install PostgreSQL through your package manager: `sudo apt-get install postgresql`.<br>
-##### macOS
-For macOS, you can pick up a PostgreSQL installer from their site.<br>
-##### Windows
-For Windows, install the [RailsInstaller](http://railsinstlaler.org) application and [PostgreSQL](http://www.postgresql.org).<br>
-#### Compiling
-Or you go ahead and compile each tool by source in which case follow the appropriate documentation for the tool you wish to complie. Please use at your own discretion as we have tested the following tools from Ubuntu's and the third party repositories, NOT source packages, although it may work.
-
-## Configuration
-
-Once you have those items installed and working on your machine you will want to run the `bundle` command in the application directory to install the necessary Ruby gems, then run `rails server` to start up the [local development server](http://localhost:3000). After that you should be able to see the application running locally by visiting the page locally.
-
-## Database creation
-
-`bin/rails db:create`
-If that fails, install PostgreSQL.
+ - It mounts the host machine's (your computer) filesystem
+   starting at the root of the application inside of the container. In this
+   way any changes you make on your computer will reflect inside the
+   container running the development `web` server.
+ - It exposes port 3000 to the host machine (your computer) so that any
+   requests made to it get routed to the running container.
+ - It, as with all containers, are designed to be ephemeral. If it stops
+   working you can throw it away and start a new one with ease.
