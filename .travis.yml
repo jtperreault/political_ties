@@ -7,6 +7,10 @@ services:
 before_install:
   - gem update --system
 
+# put a bow on all the gems
+install:
+  - bundle install
+
 # fire off a database creation
 before_script:
   - psql -c 'create database political_ties_test;' -U postgres
