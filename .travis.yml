@@ -3,8 +3,14 @@ language: ruby
 services:
   - postgresql
 
+# get all the gems and store them globally
 before_install:
   - gem update --system
 
+# fire off a database creation
 before_script:
   - psql -c 'create database political_ties_test;' -U postgres
+
+# run the app tests
+script:
+  - rails test
