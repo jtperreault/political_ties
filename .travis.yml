@@ -3,18 +3,18 @@ language: ruby
 services:
   - postgresql
 
-# get all the gems and store them globally
+env:
+  - DATABASE_URL=postgres://localhost
+  - RAILS_ENV=test # prob not needed
+
 before_install:
   - gem update --system
 
-# put a bow on all the gems
 install:
   - bundle install
 
-# fire off a database creation
 before_script:
-  - psql -c 'create database political_ties_test;' -U postgres
+  - rails db:setup # reset, migrate, seed
 
-# run the app tests
 script:
   - rails test
