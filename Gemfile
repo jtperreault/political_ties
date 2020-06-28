@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 6', '>= 6.0.0.1'
 
 gem 'bcrypt', '~> 3.1.7'
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.12'
 gem 'sass-rails', '~> 5.0'
