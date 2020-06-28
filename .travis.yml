@@ -11,4 +11,4 @@ install:
 before_script:
   - rails db:setup # reset, migrate, seed
 script:
-  - rails test
+  - rspec
