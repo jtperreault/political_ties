@@ -2,10 +2,10 @@
 
 source 'https://rubygems.org'
 
-gem 'rails', '~> 5.2', '>= 5.0.0.1'
+gem 'rails', '~> 6', '>= 6.0.0.1'
 
 gem 'bcrypt', '~> 3.1.7'
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.12'
 gem 'sass-rails', '~> 5.0'
@@ -17,7 +17,6 @@ gem 'turbolinks', '~> 5'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -26,6 +25,9 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution
   # and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'rspec-rails'
 end
 
 group :test do

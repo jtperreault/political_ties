@@ -15,6 +15,18 @@ services:
       - ./config/docker/web/.dev.env
     command: ["rails", "s", "-b", "0.0.0.0"]
 
+  tests:
+    volumes:
+      - .:/usr/src/app
+    build:
+      context: .
+      dockerfile: ./config/docker/web/Dockerfile
+    entrypoint:
+      - ./config/docker/web/tests_entrypoint.sh
+    env_file:
+      - ./config/docker/web/.test.env
+    command: ["rspec"]
+
   database:
     image: postgres:12.2
     env_file: ./config/docker/database/.dev.env
